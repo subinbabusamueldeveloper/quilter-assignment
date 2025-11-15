@@ -1,5 +1,6 @@
 package subin.android.quilter.core.di
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,8 +17,9 @@ import javax.inject.Singleton
 object RepositoryModule {
 
     @Provides
-    @Singleton
     fun provideBookRepository(
-        api: BookApi
-    ): BookRepository = BookRepositoryImpl(api)
+        remoteDataSource: BookRemoteDataSource
+    ): BookRepository {
+        return BookRepositoryImpl(remoteDataSource)
+    }
 }

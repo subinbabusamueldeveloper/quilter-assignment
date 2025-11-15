@@ -10,6 +10,7 @@ import subin.android.quilter.feature_book_list.domain.repository.BookRepository
 class GetBookListUseCase @Inject constructor(
     private val repository: BookRepository
 ) {
-    operator fun invoke(tab: BookListTab): Single<List<Book>> =
-        repository.getBooks(tab)
+    operator fun invoke(tab: BookListTab): Single<Resource<List<Book>>> {
+        return repository.getBooks(tab)
+    }
 }

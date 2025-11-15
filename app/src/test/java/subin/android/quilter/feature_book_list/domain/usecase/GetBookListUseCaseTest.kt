@@ -1,9 +1,6 @@
 package subin.android.quilter.feature_book_list.domain.usecase
 
 import io.reactivex.rxjava3.core.Single
-import junit.framework.TestCase.assertEquals
-import junit.framework.TestCase.assertTrue
-import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock
@@ -24,8 +21,7 @@ class GetBookListUseCaseTest {
     }
 
     @Test
-    fun `UseCase returns book list when repository succeeds`() {
-        // Arrange
+    fun `UseCase returns Success Resource when repository succeeds`() {
         val books = listOf(
             Book(
                 id = "OL1W",
@@ -38,19 +34,18 @@ class GetBookListUseCaseTest {
             )
         )
 
-        // Mock repository (MUST return Single)
         whenever(repository.getBooks(BookListTab.WantToRead))
-            .thenReturn(Single.just(books))
+            .thenReturn(Single.just(Resource.Success(books)))
 
-        // Act
         val testObserver = useCase(BookListTab.WantToRead).test()
 
-        // Assert
         testObserver.assertNoErrors()
-        testObserver.assertValue { list ->
-            list.size == 1 &&
-                    list.first().title == "Test Book" &&
-                    list.first().author == "Author"
+
+        testObserver.assertValue { resource ->
+            resource is Resource.Success &&
+                    resource.data.size == 1 &&
+                    resource.data.first().title == "Test Book" &&
+                    resource.data.first().author == "Author"
         }
     }
 }
