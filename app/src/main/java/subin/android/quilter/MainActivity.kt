@@ -11,7 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
 import subin.android.quilter.feature_book_list.presentation.BookListScreen
-import subin.android.quilter.ui.theme.QuilterTheme
+import subin.android.quilter.core.ui.theme.QuilterTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

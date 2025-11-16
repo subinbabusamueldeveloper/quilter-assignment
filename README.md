@@ -1,6 +1,6 @@
 # Quilter – Book List App
 
-A clean-architecture Android application built using **Jetpack Compose**, **MVVM + Clean Architecture**, **Hilt**, **Retrofit**, **OkHttp**, **Moshi**, and **RxJava**. This project fetches categorised reading log data from the **OpenLibrary API** and displays it in a modern, reactive UI with a bottom-sheet detail view.
+A clean-architecture Android application built using **Jetpack Compose**, **MVVM + Clean Architecture**, **Hilt**, **Retrofit**, **OkHttp**, **Moshi**, and **RxJava**. This project fetches categorised reading data from the **OpenLibrary API** and displays it in a modern, reactive UI with a bottom-sheet detail view.
 
 ## API Used
 https://openlibrary.org/people/mekBot/books/{category}.json
@@ -35,16 +35,15 @@ Shows:
   <img src="screenshot/BookDetails.png" width="200"/>
 </p>
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Kotlin
 - Jetpack Compose
 - Material 3
-- MVVM
+- MVVM + Clean Architecture
 - Hilt
 - Retrofit
 - Moshi
-- OkHttp
 - RxJava
 
 ---

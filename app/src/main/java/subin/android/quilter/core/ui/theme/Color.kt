@@ -1,4 +1,4 @@
-package subin.android.quilter.ui.theme
+package subin.android.quilter.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
